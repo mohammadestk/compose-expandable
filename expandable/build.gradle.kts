@@ -3,6 +3,9 @@ plugins {
     id("kotlin-android")
 }
 
+group = "com.github.mohammadestk"
+
+
 android {
     compileSdk = BuildAndroidConfig.COMPILE_SDK_VERSION
 
