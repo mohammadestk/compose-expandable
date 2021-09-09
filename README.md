@@ -8,9 +8,9 @@ A fully customizable and **state hoisted** expandable view developed by **Jetpac
 ## Prerequisites 👑
 
 * build.gradle.kts
-	```
+	```kotlin
 	dependencies {
-	    ...
+         /** .... **/
 		implementation("ir.mohammadesteki:compose-expandable:0.1.1")
 	}
 	```
@@ -20,7 +20,7 @@ A fully customizable and **state hoisted** expandable view developed by **Jetpac
 You can see example provided in app module
 
 * Simple example
-    ```
+    ```kotlin
     val expanded = remember { mutableStateOf(false) }
 
     Expandable(
@@ -28,13 +28,13 @@ You can see example provided in app module
         onExpandChanged = {
             expanded.value = it
         },
-        title = { **/ Your Title /** },
-        content = { **/ Your Content /** },
+        title = { /** Your Title **/ },
+        content = { /** Your Content **/ },
     )
     ```
 
 * Advanced example
-    ```
+    ```kotlin
     val expanded = remember { mutableStateOf(false) }
         val expandAnimation: State<Float> = animateFloatAsState(
             targetValue = if (expanded.value) 540f else 0f,
@@ -47,8 +47,8 @@ You can see example provided in app module
             onExpandChanged = {
                 expanded.value = it
             },
-            title = { **/ Your Title /** },
-            content = { **/ Your Content /** },
+            title = { /** Your Title **/ },
+            content = { /** Your Content **/ },
             contentAnimation = spring(
                 dampingRatio = Spring.DampingRatioHighBouncy,
                 stiffness = Spring.StiffnessLow
