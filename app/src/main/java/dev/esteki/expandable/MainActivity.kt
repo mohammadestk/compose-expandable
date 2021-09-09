@@ -56,6 +56,18 @@ class MainActivity : ComponentActivity() {
                         Spacer(modifier = Modifier.height(16.dp))
                         Text(
                             modifier = Modifier.padding(horizontal = 16.dp),
+                            text = "Full custom",
+                            style = MaterialTheme.typography.subtitle1
+                        )
+                        Card(
+                            modifier = Modifier.padding(16.dp),
+                            elevation = 4.dp
+                        ) {
+                            ExpandableFullCustom()
+                        }
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text(
+                            modifier = Modifier.padding(horizontal = 16.dp),
                             text = "With leading icon",
                             style = MaterialTheme.typography.subtitle1
                         )
@@ -228,7 +240,6 @@ fun ExpandableCustomContentAnimation() {
     val expandAnimation: State<Float> = animateFloatAsState(
         targetValue = if (expanded.value) 540f else 0f,
         animationSpec = tween(1000, easing = FastOutSlowInEasing)
-
     )
 
     Expandable(
@@ -259,6 +270,53 @@ fun ExpandableCustomContentAnimation() {
         }
     )
 }
+
+@OptIn(ExperimentalMaterialApi::class)
+@Composable
+fun ExpandableFullCustom() {
+    val expanded = remember { mutableStateOf(false) }
+    val expandAnimation: State<Float> = animateFloatAsState(
+        targetValue = if (expanded.value) 540f else 0f,
+        animationSpec = tween(1000, easing = FastOutSlowInEasing)
+    )
+
+    Expandable(
+        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+        expanded = expanded.value,
+        onExpandChanged = {
+            expanded.value = it
+        },
+        title = { CardTitle() },
+        content = { ExpandableContent() },
+        contentAnimation = spring(
+            dampingRatio = Spring.DampingRatioHighBouncy,
+            stiffness = Spring.StiffnessLow
+        ),
+        leading = {
+            Icon(
+                modifier = Modifier,
+                imageVector = Icons.Filled.Call,
+                contentDescription = null
+            )
+            Spacer(modifier = Modifier.width(20.dp))
+        },
+        expandAnimation = expandAnimation,
+        expand = { modifier ->
+            IconButton(
+                modifier = modifier,
+                onClick = {
+                    expanded.value = !expanded.value
+                }
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.KeyboardArrowDown,
+                    contentDescription = null
+                )
+            }
+        }
+    )
+}
+
 
 @Composable
 private fun ExpandableContent() {
