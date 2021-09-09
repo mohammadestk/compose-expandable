@@ -3,9 +3,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        gradlePluginPortal()
     }
 }
 
-rootProject.name = "Expandable"
 include(":app")
 include(":expandable")
+rootProject.name = "Expandable"

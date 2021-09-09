@@ -5,22 +5,13 @@
 
 A fully customizable and **state hoisted** expandable view developed by **Jetpack Compose**
 
-This is an example of how to list things you need to use the software and how to install them.
-* build.gradle.kts (root)
-  ```
-    allprojects {
-		repositories {
-			...
-            maven("https://jitpack.io")
-		}
-	}
-	```
+## Prerequisites 👑
 
-* build.gradle.kts (app module)
+* build.gradle.kts
 	```
 	dependencies {
 	    ...
-		implementation("com.github.mohammadestk:compose-expandable:0.1.0")
+		implementation("ir.mohammadesteki:compose-expandable:0.1.1")
 	}
 	```
 

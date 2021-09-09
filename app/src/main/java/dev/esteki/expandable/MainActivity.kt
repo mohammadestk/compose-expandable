@@ -133,7 +133,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ExpandableWithIcon() {
     val expanded = remember { mutableStateOf(false) }
-
     Expandable(
         modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
         expanded = expanded.value,

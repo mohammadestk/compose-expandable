@@ -67,6 +67,7 @@ dependencies {
     implementation(Dependencies.COMPOSE_MATERIAL)
     implementation(Dependencies.COMPOSE_UI_TOOLING_PREVIEW)
     implementation(Dependencies.COMPOSE_ACTIVITY)
+//    implementation("ir.mohammadesteki:compose-expandable:0.1.1")
     debugImplementation(Dependencies.COMPOSE_UI_TOOLING)
 
     testImplementation(TestDependencies.JUNIT)
