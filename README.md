@@ -99,7 +99,7 @@ You can see example provided in app module
 
 ## Demo ✨
 
-<img src="https://github.com/mohammadestk/compose-expandable/demo/sample.gif" width="81" height="42" />
+<img src="https://github.com/mohammadestk/compose-expandable/blob/master/demo/sample.gif" width="81" height="42" />
 
 ## Gradle Setup 🐘
 
